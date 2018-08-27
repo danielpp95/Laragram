@@ -124,25 +124,7 @@
                             </main>
                     </div>
                 </div>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <nav class="float-left">
-                            <ul>
-                                <li>
-                                    <a href="https://www.creative-tim.com">
-                                        Creative Tim
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="copyright float-right">
-                            &copy; , made with <i class="tim-icons icon-heart-2"></i> by
-                            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-                        </div>
-                
-                        <!-- your footer here -->
-                    </div>
-                </footer>
+                @include('layouts.footer')
             </div>
         </div>
     </div>
