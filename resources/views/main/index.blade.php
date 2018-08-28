@@ -6,7 +6,7 @@
         <div class="card-body">
           <h1 class="card-title">Laragram</h1>
           <h2 class="card-text">
-              <small class="text-muted">A dark-theme instagram made with laratter.</small>
+              <small class="text-muted">A dark-theme instagram made with Laravel.</small>
               </h2>
 
           @include('auth.registerForm')
