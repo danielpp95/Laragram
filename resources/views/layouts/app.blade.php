@@ -87,7 +87,7 @@
                 
 
 
-                <div class="content">
+                <div class="conent">
                     <div class="container-fluid">
                         <!-- your content here -->
                         <main class="py-4">
