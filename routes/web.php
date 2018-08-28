@@ -11,12 +11,10 @@
 |
 */
 Route::get('/', 'UserController@isLogged');
-Route::get('/isLogged2', 'UserController@isLogged2');
-
-// Route::get('/', function () {
-//     return view('home');
-// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/upload', 'PostController@upload');
+  Route::post('/uploadPost', 'PostController@uploadPost');
+});
