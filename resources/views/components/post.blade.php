@@ -2,11 +2,20 @@
   {{-- title bar --}}
   <div class="navbar bg-primary my-0 py-0" style="height: 40px !important; min-height: 40px !important;" >
     <p>
-      <img 
-        class="rounded-circle col-md-2 p-0" 
-        style="max-width: 7%" 
-        src="{{$post->user->avatar}}"  
-        alt="profile picture" >
+      @if ($post->user->avatar)
+        <img 
+          class="rounded-circle col-md-2 p-0" 
+          style="max-width: 7%" 
+          src="{{$post->user->avatar}}"  
+          alt="profile picture" >
+        @else
+          <img 
+            class="rounded-circle col-md-2 p-0" 
+            style="max-width: 7%" 
+            src="{{asset('images/user-icon.png') }}"  
+            alt="profile picture" >
+          
+      @endif
       {{$post->user->username}}
     </p>
   </div>
