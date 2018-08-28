@@ -11,37 +11,51 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-    <link href="{{ asset('css/black-dashboard.css?v=1.0.0') }}" rel="stylesheet">
+    <link href="{{ asset('css/black-dashboard.min.css?v=1.0.0') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="wrapper ">
+          
+            <div class="main-panel">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg bg-transparent">
+                    {{-- Left side --}}
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Laragram <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                    {{-- Center side --}}
+                    <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0">
+                        <form class="form-inline ml-auto">
+                            <div class="form-group no-border">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-link btn-icon btn-round">
+                                <i class="tim-icons icon-zoom-split"></i>
+                            </button>
+                        </form>
+                    </ul>
+                    {{-- Right side --}}
+                    <div class="navbar-nav ml-auto mt-2 mt-lg-0">
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -57,8 +71,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -68,14 +81,46 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+                
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <!-- your content here -->
+                        <main class="py-4">
+                                @yield('content')
+                            </main>
+                    </div>
+                </div>
+                @include('components.footer')
+            </div>
+        </div>
     </div>
+        
+   
+
+
+
+    <!--   Core JS Files   -->
+    {{-- creo que es jquery --}}
+    <script src="{{ asset('js/app.js') }}" defer></script> 
+    
+    <script src="{{ asset('js/core/popper.min.js') }}" defer></script> 
+    <script src="{{ asset('js/core/bootstrap.min.js') }}" defer></script> 
+    <script src="{{ asset('js/plugins/perfect-scrollbar.jquery.min.js') }}" defer></script> 
+    
+
+    <!-- Chartist JS -->
+    <script src="{{ asset('js/plugins/chartjs.min.js') }}" defer></script> 
+    <!--  Notifications Plugin    -->
+    <script src="{{ asset('js/plugins/bootstrap-notify.js') }}" defer></script> 
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="{{ asset('js/black-dashboard.js?') }}" defer></script> 
+
+
+
 </body>
 </html>
