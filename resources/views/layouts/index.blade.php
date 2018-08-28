@@ -41,7 +41,7 @@
                             </main>
                     </div>
                 </div>
-                @include('layouts.footer')
+                @include('components.footer')
             </div>
         </div>
     </div>
