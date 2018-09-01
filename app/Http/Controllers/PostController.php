@@ -26,4 +26,11 @@ class PostController extends Controller
 
         return redirect('/');
     }
+
+    function showPost ($postId) {
+        $post = Post::where('id', $postId)->firstOrFail();
+        return view('posts.postPage', [
+            'post' => $post,
+        ]);
+    }
 }
