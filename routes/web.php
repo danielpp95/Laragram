@@ -11,6 +11,7 @@
 |
 */
 Route::get('/', 'UserController@isLogged');
+Route::get('/@{username}', 'UserController@showUser');
 
 Auth::routes();
 
