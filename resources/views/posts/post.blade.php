@@ -16,7 +16,9 @@
             alt="profile picture" >
           
       @endif
-      {{$post->user->username}}
+      <a class="btn btn-default btn-link ml-0 pl-1" href={{'@'}}{{ $post->user->username }}>
+        {{$post->user->username}}
+      </a>
     </p>
   </div>
 
