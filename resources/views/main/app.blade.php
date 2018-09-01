@@ -3,7 +3,7 @@
 @section('content')
 
 @foreach ($posts as $post)
-    @include('components.post')
+    @include('posts.post')
 @endforeach
 
 @if (count($posts))
